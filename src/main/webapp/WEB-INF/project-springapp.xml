@@ -68,7 +68,10 @@
         </property>
     </bean>
 
-    <bean id="cacheControlFilter" class="com.wavemaker.runtime.web.filter.CacheControlFilter"/>
+     <bean id="cacheControlFilter" class="com.wavemaker.runtime.web.filter.CacheControlFilter"/>
+   <mvc:interceptors>
+        <bean id="annotationInterceptor" class="com.wavemaker.runtime.web.interceptor.WMAppRequestInterceptor" />
+    </mvc:interceptors>
 
     <bean id="AppHandlerExceptionResolver" class="com.wavemaker.runtime.data.exceptionresolver.ApplicationRestServiceExceptionResolver"/>
 
